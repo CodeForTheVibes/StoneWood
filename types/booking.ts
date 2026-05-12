@@ -1,0 +1,21 @@
+export type BookingStatus = "Paid" | "Confirmed" | "Completed" | "Cancelled";
+export type BookingPackage = "Day Tour" | "Day Tour + Room" | "On-Site Reservation";
+
+export interface Booking {
+  id: string;
+  name: string;
+  contact: string;
+  email: string;
+  date: string;
+  guests: number;
+  package: BookingPackage | string;
+  rooms: number[];
+  overtime: number;
+  total: number;
+  downpayment: number;
+  status: BookingStatus;
+  paymentProof: boolean;
+  notes: string;
+  createdAt?: number;
+  cancelReason?: string | null;
+}
